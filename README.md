@@ -25,7 +25,7 @@ Go实现的环境温度告警系统，该程序适用于达林科技DL11B-MC-Dx�
   make install
 ```
 
-windows用户可以自行编译，或者从仓库的release中下载exe二进制可执行文件，然后自行创建一个配置文件。在CMD或者PowerShell中自行如下的命令即可运行：
+windows用户可以自行编译，或者从仓库的release中下载exe二进制可执行文件，然后自行创建一个配置文件。在CMD或者PowerShell中执行如下的命令即可运行：
 
 ```cmd
 temp-alerter.exe -c config.yaml
