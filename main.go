@@ -32,7 +32,7 @@ func main() {
 				log.Println("temp-alerter exit.")
 				ch <- s
 			default:
-				log.Printf("received other signal: %s, tokamakd exit.", s)
+				log.Printf("received other signal: %s, temp-alerter exit.", s)
 			}
 		}
 	}()
