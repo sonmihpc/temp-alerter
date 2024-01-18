@@ -10,19 +10,25 @@ Go实现的环境温度告警系统，该程序适用于达林科技DL11B-MC-Dx�
 
 ## 安装
 
-如果是centos7用户或者rocky9用户，可以直接从仓库的release中下载rpm文件直接安装即可：
+如果是centos7用户或者rocky 9用户，可以直接从仓库的release中下载rpm文件直接安装即可：
 
 ```bash
   rpm -ivh temp-alerter-0.1.0-1.el7.x86_64.rpm
 ```
 
-如果有Go编译环境，可以直接克隆源码，从源码自行编译：
+其他linux发行版的用户，如果有Go编译环境，可以直接克隆源码，从源码自行编译：
 
 ```bash
   git clone https://github.com/sonmihpc/temp-alerter.git
   cd temp-alerter
   make build
   make install
+```
+
+windows用户可以自行编译，或者从仓库的release中下载exe二进制可执行文件，然后自行创建一个配置文件。在CMD或者PowerShell中自行如下的命令即可运行：
+
+```cmd
+temp-alerter.exe -c config.yaml
 ```
 
 ## 配置/使用
@@ -32,7 +38,7 @@ Go实现的环境温度告警系统，该程序适用于达林科技DL11B-MC-Dx�
 用户需要提供一个开通smtp功能的邮箱用于发送邮件使用，推荐使用163邮箱。
 
 ```
-serial_port: "/dev/ttyUSB0"       # 温度传感器设备号
+serial_port: "/dev/ttyUSB0"       # 温度传感器设备号，win用户改为对应的串口，例如COM1即可
 smtp_host: smtp.163.com           # 邮箱smtp服务器，示例配置为163邮箱
 smtp_port: 25                     # 邮箱smtp服务器端口，一般为25
 smtp_email: test@163.com          # 邮箱地址
