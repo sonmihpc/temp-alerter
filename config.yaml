@@ -1,0 +1,12 @@
+serial_port: "/dev/ttyUSB0"       # 温度传感器设备串口
+smtp_host: smtp.163.com
+smtp_port: 25
+smtp_email: test@163.com
+smtp_username: test
+smtp_password: 123456
+mail_receiver:                    # 接收邮件的用户列表
+  - your-email@163.com
+mail_delay: 30                    # 发送报警邮件后睡眠间隔，单位分钟
+max_temp: 30                      # 温度警告最高阈值
+min_temp: 0                       # 温度警告最低阈值
+sample_interval: 2                # 温度取样间隔，单位秒

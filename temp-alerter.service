@@ -1,0 +1,14 @@
+[Unit]
+Description=Temp-Alerter
+StartLimitIntervalSec=20
+
+[Service]
+Type=notify
+ExecStart=/usr/sbin/temp-alerter -c /etc/temp-alerter/config.yaml
+Restart=on-failure
+KillMode=process
+Restart=always
+RestartSec=20
+
+[Install]
+WantedBy=multi-user.target
