@@ -44,7 +44,7 @@ sensor_num: 2                     # 温度传感器路数，DL11B-MC-D2有两路
 smtp_host: smtp.163.com           # 邮箱smtp服务器，示例配置为163邮箱
 smtp_port: 25                     # 邮箱smtp服务器端口，一般为25
 smtp_email: test@163.com          # 邮箱地址
-smtp_username: chia_sender        # 邮箱用户名，即邮箱地址@前面的内容
+smtp_username: test               # 邮箱用户名，即邮箱地址@前面的内容
 smtp_password: 123456             # 邮箱的smtp临时密码
 mail_receiver:                    # 接收警告邮件的用户列表，示例中有两个用于接受邮件的邮箱
   - user1@163.com
