@@ -19,16 +19,16 @@ type Monitor struct {
 
 	receiver  []string
 	mailDelay int
-
-	status   bool
-	statusMu sync.Mutex
+	sensorNum int
+	status    bool
+	statusMu  sync.Mutex
 
 	client     modbus.Client
 	mailClient *mail.Client
 	closeCh    chan interface{}
 }
 
-func NewMonitor(address string, interval int, maxTemp, minTemp float64, receiver []string, mailDelay int, mailClient *mail.Client) *Monitor {
+func NewMonitor(address string, interval int, maxTemp, minTemp float64, receiver []string, mailDelay, sensorNum int, mailClient *mail.Client) *Monitor {
 	p := modbus.NewRTUClientProvider(
 		modbus.WithSerialConfig(serial.Config{
 			Address:  address,
@@ -46,6 +46,7 @@ func NewMonitor(address string, interval int, maxTemp, minTemp float64, receiver
 		receiver:   receiver,
 		client:     client,
 		mailDelay:  mailDelay,
+		sensorNum:  sensorNum,
 		mailClient: mailClient,
 	}
 }
@@ -120,7 +121,7 @@ func (m *Monitor) runInBackground() {
 }
 
 func (m *Monitor) temperatureSample() ([]float64, error) {
-	result, err := m.client.ReadHoldingRegisters(1, 0x0000, 2)
+	result, err := m.client.ReadHoldingRegisters(1, 0x0000, uint16(m.sensorNum))
 	if err != nil {
 		log.Println(err)
 		return nil, err
@@ -144,6 +145,6 @@ func (m *Monitor) tempOutOfRange(res []float64) bool {
 }
 
 func (m *Monitor) generateMailBody(res []float64) (string, error) {
-	rep := report.NewReport(res[0], res[1])
+	rep := report.NewReport(res)
 	return rep.GetHtmlBody()
 }

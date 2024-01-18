@@ -1,4 +1,5 @@
 serial_port: "/dev/ttyUSB0"       # 温度传感器设备串口
+sensor_num: 2                     # 传感器路数
 smtp_host: smtp.163.com
 smtp_port: 25
 smtp_email: test@163.com

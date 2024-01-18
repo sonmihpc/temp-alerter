@@ -8,14 +8,12 @@ import (
 )
 
 type Report struct {
-	Temp1 float64
-	Temp2 float64
+	Temps []float64
 }
 
-func NewReport(temp1, temp2 float64) *Report {
+func NewReport(temps []float64) *Report {
 	return &Report{
-		Temp1: temp1,
-		Temp2: temp2,
+		temps,
 	}
 }
 

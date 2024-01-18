@@ -9,6 +9,7 @@ import (
 
 type Config struct {
 	SerialPort     string   `mapstructure:"serial_port" yaml:"serial_port"`
+	SensorNum      int      `mapstructure:"sensor_num" yaml:"sensor_num"`
 	SmtpHost       string   `mapstructure:"smtp_host" yaml:"smtp_host"`
 	SmtpPort       int      `mapstructure:"smtp_port" yaml:"smtp_port"`
 	SmtpEmail      string   `mapstructure:"smtp_email" yaml:"smtp_email"`

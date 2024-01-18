@@ -14,22 +14,16 @@
 	<body>
 		<p>Warning: The temperatures has exceeded the threshold:</p>
 		<table>
+		    {{range $index, $value := .Temps}}
 			<tr>
 				<td>
-					Temperature 1
+					Temperature {{$index}}
 				</td>
 				<td>
-					{{.Temp1}} °C
+					{{$value}} °C
 				</td>
 			</tr>
-			<tr>
-            	<td>
-            		Temperature 2
-            	</td>
-            	<td>
-            		{{.Temp2}} °C
-            	</td>
-            </tr>
+		    {{end}}
 		</table>
 		</center>
 		<p>Regards,</p>
