@@ -10,13 +10,14 @@
 
 ## 安装
 
-如果是centos 7用户或者rocky 9用户，可以直接从仓库的release中下载rpm文件直接安装即可：
+如果是Centos 7用户或者RockyLinux/AlmaLinux 9用户，可以直接从仓库的release中下载rpm文件直接安装即可：
 
 ```bash
-  rpm -ivh temp-alerter-0.1.0-1.el7.x86_64.rpm
+  rpm -ivh temp-alerter-0.1.0-1.el7.x86_64.rpm # 适用于Centos 7
+  rpm -ivh temp-alerter-0.1.0-1.el9.x86_64.rpm # 适用于RockyLinux 9或者AlmaLinux 9
 ```
 
-其他linux发行版的用户，如果有Go编译环境，可以直接克隆源码，从源码自行编译：
+其他Linux发行版的用户，如果有Go编译环境，可以直接克隆源码，从源码自行编译：
 
 ```bash
   git clone https://github.com/sonmihpc/temp-alerter.git
@@ -25,7 +26,7 @@
   make install
 ```
 
-windows用户可以自行编译，或者从仓库的release中下载exe二进制可执行文件，然后自行创建一个配置文件。在CMD或者PowerShell中执行如下的命令即可运行：
+Windows用户可以自行编译，或者从仓库的release中下载exe二进制可执行文件，然后自行创建一个配置文件。在CMD或者PowerShell中执行如下的命令即可运行：
 
 ```cmd
 temp-alerter.exe -c config.yaml
@@ -33,7 +34,7 @@ temp-alerter.exe -c config.yaml
 
 ## 配置/使用
 
-用户安装软件之后，需要进行配置，以下是各个配置选项的说明。linux用户可以编辑 **/etc/temp-alerter/config.yaml**自行修改。
+用户安装软件之后，需要进行配置，以下是各个配置选项的说明。Linux用户可以编辑 **/etc/temp-alerter/config.yaml**自行修改。
 
 用户需要提供一个开通smtp功能的邮箱用于发送邮件使用，推荐使用163邮箱。
 
