@@ -10,7 +10,7 @@ Go实现的环境温度告警系统，该程序适用于达林科技DL11B-MC-Dx�
 
 ## 安装
 
-如果是centos7用户或者rocky 9用户，可以直接从仓库的release中下载rpm文件直接安装即可：
+如果是centos 7用户或者rocky 9用户，可以直接从仓库的release中下载rpm文件直接安装即可：
 
 ```bash
   rpm -ivh temp-alerter-0.1.0-1.el7.x86_64.rpm
@@ -48,8 +48,8 @@ mail_receiver:                    # 接收警告邮件的用户列表，示例�
   - user1@163.com
   - user2@163.com
 mail_delay: 30                    # 发送报警邮件后睡眠间隔，单位分钟，睡眠是为了防止邮件滥发
-max_temp: 25                      # 温度警告最高阈值
-min_temp: 0                       # 温度警告最低阈值
+max_temp: 25                      # 温度警告最高阈值，单位摄氏度
+min_temp: 0                       # 温度警告最低阈值，单位摄氏度
 sample_interval: 2                # 温度取样间隔，单位秒
 ```
 
