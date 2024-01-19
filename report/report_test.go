@@ -8,6 +8,6 @@ import (
 
 func TestNewReport(t *testing.T) {
 	temps := []float64{20.0, 20.1, 20.3}
-	report := NewReport(temps)
+	report := NewReport("position1", temps)
 	fmt.Println(report.GetHtmlBody())
 }

@@ -11,3 +11,4 @@ mail_delay: 30                    # 发送报警邮件后睡眠间隔，单位�
 max_temp: 30                      # 温度警告最高阈值
 min_temp: 0                       # 温度警告最低阈值
 sample_interval: 2                # 温度取样间隔，单位秒
+position: "A place on earth"      # 地点备注

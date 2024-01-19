@@ -16,7 +16,7 @@ import (
 func main() {
 	cfg := config.Viper()
 	mailInstance := mail.NewMailClient(fmt.Sprintf("%s:%v", cfg.SmtpHost, cfg.SmtpPort), cfg.SmtpEmail, cfg.SmtpUsername, cfg.SmtpPassword)
-	tempMonitor := monitor.NewMonitor(cfg.SerialPort, cfg.SampleInterval, cfg.MaxTemp, cfg.MinTemp, cfg.MailReceiver, cfg.MailDelay, cfg.SensorNum, mailInstance)
+	tempMonitor := monitor.NewMonitor(cfg.SerialPort, cfg.SampleInterval, cfg.MaxTemp, cfg.MinTemp, cfg.MailReceiver, cfg.MailDelay, cfg.SensorNum, cfg.Position, mailInstance)
 	tempMonitor.Run()
 
 	// daemon

@@ -20,6 +20,7 @@ type Monitor struct {
 	receiver  []string
 	mailDelay int
 	sensorNum int
+	position  string
 	status    bool
 	statusMu  sync.Mutex
 
@@ -28,7 +29,7 @@ type Monitor struct {
 	closeCh    chan interface{}
 }
 
-func NewMonitor(address string, interval int, maxTemp, minTemp float64, receiver []string, mailDelay, sensorNum int, mailClient *mail.Client) *Monitor {
+func NewMonitor(address string, interval int, maxTemp, minTemp float64, receiver []string, mailDelay, sensorNum int, position string, mailClient *mail.Client) *Monitor {
 	p := modbus.NewRTUClientProvider(
 		modbus.WithSerialConfig(serial.Config{
 			Address:  address,
@@ -47,6 +48,7 @@ func NewMonitor(address string, interval int, maxTemp, minTemp float64, receiver
 		client:     client,
 		mailDelay:  mailDelay,
 		sensorNum:  sensorNum,
+		position:   position,
 		mailClient: mailClient,
 	}
 }
@@ -145,6 +147,6 @@ func (m *Monitor) tempOutOfRange(res []float64) bool {
 }
 
 func (m *Monitor) generateMailBody(res []float64) (string, error) {
-	rep := report.NewReport(res)
+	rep := report.NewReport(m.position, res)
 	return rep.GetHtmlBody()
 }

@@ -14,6 +14,14 @@
 	<body>
 		<p>Warning: The temperatures has exceeded the threshold:</p>
 		<table>
+		    <tr>
+		        <td>
+		            Position
+		        <td>
+		            {{.Position}}
+		        <td>
+		        <td>
+		    </tr>
 		    {{range $index, $value := .Temps}}
 			<tr>
 				<td>

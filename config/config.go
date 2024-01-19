@@ -20,6 +20,7 @@ type Config struct {
 	MaxTemp        float64  `mapstructure:"max_temp" yaml:"max_temp"`
 	MinTemp        float64  `mapstructure:"min_temp" yaml:"min_temp"`
 	SampleInterval int      `mapstructure:"sample_interval" yaml:"sample_interval"`
+	Position       string   `mapstructure:"position" yaml:"position"`
 }
 
 func Viper(path ...string) Config {

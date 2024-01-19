@@ -8,11 +8,13 @@ import (
 )
 
 type Report struct {
-	Temps []float64
+	Position string
+	Temps    []float64
 }
 
-func NewReport(temps []float64) *Report {
+func NewReport(position string, temps []float64) *Report {
 	return &Report{
+		position,
 		temps,
 	}
 }
