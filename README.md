@@ -53,6 +53,7 @@ mail_delay: 30                    # 发送报警邮件后睡眠间隔，单位�
 max_temp: 25                      # 温度警告最高阈值，单位摄氏度
 min_temp: 0                       # 温度警告最低阈值，单位摄氏度
 sample_interval: 2                # 温度取样间隔，单位秒
+position: "A place on earth"      # 自定义位置，如有多个地点需要监控温度时候用于区分邮件
 ```
 
 配置好之后启动服务即可：
